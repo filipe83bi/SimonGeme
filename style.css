@@ -82,5 +82,5 @@ main {
 }
 
 .game-over {
-  background-color: var(--red-tint);
+  background-color: var(--red-tint) !importand;
 }
