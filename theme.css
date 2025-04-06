@@ -1,0 +1,15 @@
+:root {
+  --background: rgb(225, 218, 230);
+  --background-tint: rgb(143, 126, 152);
+  --background-button: rgb(142, 107, 163);
+  --red: rgb(173, 0, 0);
+  --red-tint: rgb(255, 0, 0);
+  --yellow: rgb(184, 184, 0);
+  --yellow-tint: yellow;
+  --green: green;
+  --green-tint: rgb(0, 208, 0);
+  --blue: rgb(0, 116, 178);
+  --blue-tint: rgb(0, 166, 255);
+  --grey: rgb(60, 60, 60);
+  --white: rgb(246, 234, 252);
+}

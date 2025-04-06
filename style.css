@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Pixel;
+  src: url(./Fonts/joystix\ monospace.otf);
+}
+html {
+  font-size: 62, 5%;
+}
+
+body {
+  background-color: var(--background);
+  font-family: Pixel;
+  color: var(--grey);
+}
+
+main {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+#header {
+  font-size: 3.8rem;
+  margin-bottom: 5rem;
+}
+
+.button {
+  width: 20rem;
+  height: 4rem;
+  border-radius: 1rem;
+  font-family: Pixel;
+  color: var(--grey);
+  background-color: var(--background-button);
+  font-size: 2.1rem;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  color: var(--background-button);
+  background-color: var(--white);
+}
+
+.color-button-container {
+  width: 30em;
+  padding: 2rem;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  border: 5px solid var(--grey);
+  background-color: var(--background-tint);
+  border-radius: 1rem;
+  gap: 4rem;
+}
+
+.color-buttons {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 1rem;
+  border: 5px solid var(--grey);
+}
+
+#red {
+  background-color: var(--red);
+}
+
+#yellow {
+  background-color: var(--yellow);
+}
+
+#green {
+  background-color: var(--green);
+}
+
+#blue {
+  background-color: var(--blue);
+}
+
+.game-over {
+  background-color: var(--red-tint);
+}
