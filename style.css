@@ -17,6 +17,11 @@ body {
   color: var(--grey);
 }
 
+body.game-over {
+  background-color: red !important;
+  transition: background-color 0.3s ease;
+}
+
 main {
   width: 1024px;
   margin: 0 auto;
@@ -79,8 +84,4 @@ main {
 
 #blue {
   background-color: var(--blue);
-}
-
-body.game-over {
-  background-color: var(--red-tint) !importand;
 }
