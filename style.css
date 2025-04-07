@@ -81,6 +81,6 @@ main {
   background-color: var(--blue);
 }
 
-.game-over {
+body.game-over {
   background-color: var(--red-tint) !importand;
 }
