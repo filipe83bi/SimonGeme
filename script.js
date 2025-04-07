@@ -29,6 +29,7 @@ const redBackground = function () {
   bodyElement.classList.add("game-over");
   setTimeout(() => {
     bodyElement.classList.remove("game-over");
+    resetGame();
   }, 300);
 };
 
@@ -84,7 +85,7 @@ function checkAnswer(currentLevel) {
     }
   } else {
     redBackground();
-    resetGame();
+    gameOver();
   }
 }
 
@@ -98,7 +99,7 @@ function resetGame() {
 }
 
 function gameOver() {
-  bodyElement.classList.add("game-over");
+  headerElement.textContent = `Game Over`;
   playSound("wrong");
   started = false;
 }
