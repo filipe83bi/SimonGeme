@@ -83,9 +83,8 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    gameOver();
-    resetGame();
     redBackground();
+    resetGame();
   }
 }
 
@@ -100,10 +99,6 @@ function resetGame() {
 
 function gameOver() {
   bodyElement.classList.add("game-over");
-  setTimeout(() => {
-    bodyElement.classList.remove("game-over");
-  }, 3000);
-  headerElement.textContent = `Game Over`;
   playSound("wrong");
   started = false;
 }
