@@ -12,8 +12,14 @@ let userClickedPattern = [];
 let level = 0;
 let started = false;
 
-document.querySelector(".rules").style.display = "block";
-document.querySelector(".color-button-container").style.display = "none";
+const startGame = function () {
+  if (!started) {
+    started = true;
+    level = 0;
+    toggleRulesAndColorButtons();
+    nextSequence();
+  }
+};
 
 const colorAnimation = function (color) {
   const colorButton = document.getElementById(`${color}`);
@@ -28,7 +34,7 @@ const playSound = function (sound) {
   soundOut.play();
 };
 
-const redBackground = function () {
+const gameOverBackground = function () {
   bodyElement.classList.add("game-over");
   setTimeout(() => {
     bodyElement.classList.remove("game-over");
@@ -36,37 +42,35 @@ const redBackground = function () {
   }, 300);
 };
 
+const toggleRulesAndColorButtons = function () {
+  if (!started) {
+    document.querySelector(".rules").style.display = "block";
+    document.querySelector(".color-button-container").style.display = "none";
+  } else {
+    document.querySelector(".rules").style.display = "none";
+    document.querySelector(".color-button-container").style.display = "grid";
+  }
+};
+
+toggleRulesAndColorButtons();
+
 const nextSequence = function () {
   level++;
   userClickedPattern = [];
   headerElement.textContent = `Level ${level}`;
   let randomNumber = Math.floor(Math.random() * 4);
   let randomChosenColor = buttonColor[randomNumber];
-
   colorAnimation(randomChosenColor);
   playSound(randomChosenColor);
   gamePattern.push(randomChosenColor);
 };
+
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    if (!started) {
-      started = true;
-      level = 0;
-      document.querySelector(".rules").style.display = "none";
-      document.querySelector(".color-button-container").style.display = "grid";
-      nextSequence();
-    }
-  }
+  startGame();
 });
 
 startButtonElement.addEventListener("click", function () {
-  if (!started) {
-    started = true;
-    level = 0;
-    document.querySelector(".rules").style.display = "none";
-    document.querySelector(".color-button-container").style.display = "grid";
-    nextSequence();
-  }
+  startGame();
 });
 
 colorButtonElement.forEach((button) => {
@@ -87,7 +91,7 @@ function checkAnswer(currentLevel) {
       }, 1000);
     }
   } else {
-    redBackground();
+    gameOverBackground();
     gameOver();
   }
 }
