@@ -50,6 +50,19 @@ main {
   background-color: var(--white);
 }
 
+.rules {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.rules h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.rules p {
+  font-size: 1.4rem;
+}
+
 .color-button-container {
   width: 30em;
   padding: 2rem;
