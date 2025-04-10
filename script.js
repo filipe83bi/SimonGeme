@@ -12,6 +12,9 @@ let userClickedPattern = [];
 let level = 0;
 let started = false;
 
+document.querySelector(".rules").style.display = "block";
+document.querySelector(".color-button-container").style.display = "none";
+
 const colorAnimation = function (color) {
   const colorButton = document.getElementById(`${color}`);
   colorButton.style.backgroundColor = `var(--${color}-tint)`;
@@ -49,6 +52,8 @@ document.addEventListener("keydown", function (e) {
     if (!started) {
       started = true;
       level = 0;
+      document.querySelector(".rules").style.display = "none";
+      document.querySelector(".color-button-container").style.display = "grid";
       nextSequence();
     }
   }
@@ -58,6 +63,8 @@ startButtonElement.addEventListener("click", function () {
   if (!started) {
     started = true;
     level = 0;
+    document.querySelector(".rules").style.display = "none";
+    document.querySelector(".color-button-container").style.display = "grid";
     nextSequence();
   }
 });
@@ -70,10 +77,6 @@ colorButtonElement.forEach((button) => {
     userClickedPattern.push(colorId);
     checkAnswer(userClickedPattern.length - 1);
   });
-});
-
-resetButtonElement.addEventListener("click", function () {
-  resetGame();
 });
 
 function checkAnswer(currentLevel) {
@@ -96,6 +99,8 @@ function resetGame() {
   userClickedPattern = [];
   headerElement.textContent = `Press Enter to Start`;
   bodyElement.classList.remove("game-over");
+  document.querySelector(".rules").style.display = "block";
+  document.querySelector(".color-button-container").style.display = "none";
 }
 
 function gameOver() {
